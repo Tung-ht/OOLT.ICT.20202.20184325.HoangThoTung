@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package w1;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+/**
+ * @author Tunght
+ *
+ */
+public class ex5 {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+
+}
