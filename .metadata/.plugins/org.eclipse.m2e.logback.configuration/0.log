@@ -3,3 +3,27 @@
 2021-02-28 21:05:41,405 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2021-02-28 21:46:17,397 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2021-02-28 22:53:04,783 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2021-03-12 13:02:13,798 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-03-12 13:23:10,818 [Start Help Server] INFO  org.eclipse.jetty.util.log - Logging initialized @1324822ms to org.eclipse.jetty.util.log.Slf4jLog
+2021-03-12 13:23:10,998 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-9.4.35.v20201120; built: 2020-11-27T20:36:51.615Z; git: bdc54f03a5e0a7e280fab27f55c3c75ee8da89fb; jvm 15.0.2+7-27
+2021-03-12 13:23:11,027 [Start Help Server] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2021-03-12 13:23:11,027 [Start Help Server] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2021-03-12 13:23:11,029 [Start Help Server] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+2021-03-12 13:23:11,095 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@7d7134df{/help,null,AVAILABLE}
+2021-03-12 13:23:11,117 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@28d01754{HTTP/1.1, (http/1.1)}{127.0.0.1:51700}
+2021-03-12 13:23:11,119 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started @1325125ms
+2021-03-12 13:23:11,119 [Start Help Server] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+2021-03-12 13:42:21,868 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@28d01754{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2021-03-12 13:42:21,870 [Stop Help Server] INFO  org.eclipse.jetty.server.session - node0 Stopped scavenging
+2021-03-12 13:42:21,895 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@7d7134df{/help,null,STOPPED}
+2021-03-15 08:01:55,115 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2021-03-15 08:49:46,747 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-03-15 08:55:04,609 [sentry-pool-1-thread-2] WARN  i.s.c.AbstractConnection.lockdown - Initiated a temporary lockdown because of exception: Too many requests to Sentry: https://docs.sentry.io/learn/quotas/
+2021-03-15 09:23:33,743 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-03-15 09:44:01,622 [Worker-14: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: mysql:mysql-connector-java:@MYSQL_CJ_VERSION@ @ C:\Users\DaiPhongPC\Desktop\CodeFresher\mysql-connector-java-8.0.23\src\build\misc\pom.xml.
+2021-03-15 09:44:02,647 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-03-15 09:44:02,658 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DaiPhongPC\Desktop\CodeFresher\mysql-connector-java-8.0.23\src\build\misc\src\main\resources
+2021-03-15 09:44:02,661 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-03-15 09:44:02,671 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DaiPhongPC\Desktop\CodeFresher\mysql-connector-java-8.0.23\src\build\misc\src\test\resources
+2021-03-15 12:53:50,493 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-03-15 13:42:49,711 [sentry-pool-1-thread-3] WARN  i.s.c.AbstractConnection.lockdown - Initiated a temporary lockdown because of exception: Too many requests to Sentry: https://docs.sentry.io/learn/quotas/
