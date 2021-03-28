@@ -1,4 +1,4 @@
-package demo;
+package hust.soict.globalict.aims.utils.MyDate;
 
 import java.util.Scanner;
 
