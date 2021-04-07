@@ -39,11 +39,8 @@ public class Order {
 			return null;
 		} else {
 			Order tmp = new Order();
-			System.out.println("Enter the date of order (Ex: 10 07 2000) : ");
-			Scanner sc = new Scanner(System.in);
-			String s = sc.nextLine();
-			String[] arr = s.split(" ");
-			tmp.setdateOrdered(new MyDate(arr[0], arr[1], arr[2]));
+			MyDate d = new MyDate();
+			tmp.setdateOrdered(d);
 			return tmp;
 		}
 	}

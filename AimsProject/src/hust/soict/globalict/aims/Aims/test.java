@@ -15,8 +15,10 @@ public class test {
 		odr.addDigitalVideoDisc(new DigitalVideoDisc("Anna Belle", "Thriller", "Leo LuLu", 75, 3.4f));//2 different object;
 		odr.addDigitalVideoDisc(new DigitalVideoDisc("Anna Belle", "Thriller", "Leo LuLu", 75, 3.4f));
 		odr.addDigitalVideoDisc(new DigitalVideoDisc("one", "Historic", "Mini Diva", 67, 3.4f));
+		odr.printOrder();
+		
 		odr.addDigitalVideoDisc(odr.getALuckyItem());
-
+		System.out.println("\n\nAfter user gets a free items:");
 		odr.printOrder();
 //		odr.getdateOrdered().print();
 	}

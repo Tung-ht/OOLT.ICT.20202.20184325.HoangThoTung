@@ -34,14 +34,18 @@ public class MyDate {
 
 //	constructor
 //	default format: dd-mm-yyyy
-	public MyDate(String day, String month, String year) {
+	public MyDate() {
 		super();
-		this.day = day;
-		this.month = month;
-		this.year = year;
+		System.out.println("Enter the date of order (Ex: 31 07 2000) : ");
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String[] arr = s.split(" ");
+		this.day = arr[0];
+		this.month = arr[1];
+		this.year = arr[2];
 	}
 
-//	convert month in digit format into word format
+	//	convert month in digit format into word format
 	public String convertMonth() {
 		if (getMonth().equals("01"))
 			return "Jan";
@@ -73,28 +77,30 @@ public class MyDate {
 
 // print date in some different formats
 	public void print() {
-		System.out.println("Choose a format to display: ");
-		System.out.println("1. yyyy-MM-dd (Ex: 1930-02-03).");
-		System.out.println("2. MMM d yyyy (Ex: Feb 3 1930).");
-		System.out.println("0. Exit this function!");
-		System.out.println("You choice: ");
-		int key = 0;
-		Scanner sc = new Scanner(System.in);
-		key = sc.nextInt();
-		sc.nextLine();
-		switch (key) {
-		case 1:
-			System.out.printf("yyyy-MM-dd : %s-%s-%s\n", getYear(), getMonth(), getDay());
-			return;
-		case 2:
-			System.out.printf("MMM d yyyy: %s %s %s\n", convertMonth(), getDay(), getYear());
-			return;
-		case 0:
-			// exit
-			return;
-		default:
-			System.out.println("There is no function like this!");
-			break;
+		while(true) {
+			System.out.println("Choose a format to display: ");
+			System.out.println("1. yyyy-MM-dd (Ex: 1930-02-03).");
+			System.out.println("2. MMM d yyyy (Ex: Feb 3 1930).");
+			System.out.println("0. Exit this function!");
+			System.out.println("You choice: ");
+			int key = 0;
+			Scanner sc = new Scanner(System.in);
+			key = sc.nextInt();
+			sc.nextLine();
+			switch (key) {
+			case 1:
+				System.out.printf("yyyy-MM-dd : %s-%s-%s\n", getYear(), getMonth(), getDay());
+				break;
+			case 2:
+				System.out.printf("MMM d yyyy: %s %s %s\n", convertMonth(), getDay(), getYear());
+				break;
+			case 0:
+				// exit
+				return;
+			default:
+				System.out.println("There is no function like this!");
+				break;
+			}
 		}
 	}
 }
