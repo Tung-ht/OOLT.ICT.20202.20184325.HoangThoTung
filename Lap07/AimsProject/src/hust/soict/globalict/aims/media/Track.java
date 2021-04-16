@@ -24,6 +24,9 @@ public class Track  implements Playable{
 		this.trackName = trackName;
 		this.trackLength = trackLength;
 	}
+	public Track() {
+		super();
+	}
 	
 	@Override
 	public void play() {

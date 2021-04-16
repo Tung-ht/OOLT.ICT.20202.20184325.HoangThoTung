@@ -1,6 +1,7 @@
 package hust.soict.globalict.aims.media;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Book extends Media {
 	private ArrayList<String> authors = new ArrayList<String>();
@@ -18,6 +19,10 @@ public class Book extends Media {
 		this.cost = cost;
 		this.authors = authors;
 		Media.arrDB.add(this);
+	}
+	
+	public Book() {
+		super();
 	}
 
 	
@@ -43,5 +48,18 @@ public class Book extends Media {
 			System.out.printf("%s, ", authors.get(i).toString());
 		}
 		System.out.println("|");	
+	}
+
+	public static void createNewItem() {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		Book book = new Book();
+		System.out.println("--->Import a new DVD: ");
+		System.out.println("-Title: "); book.title = sc.nextLine();
+		System.out.println("-Category: "); book.category = sc.nextLine();
+		System.out.println("-Cost: "); book.cost = sc.nextFloat();
+		
+		Media.arrDB.add(book);
+		System.out.println("Item is added successfully!");
 	}
 }

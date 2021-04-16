@@ -25,5 +25,6 @@ public abstract class Media {
 
 // 	method
 	public abstract void display();
-
+	public static void createNewItem() {
+	};
 }

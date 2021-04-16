@@ -19,5 +19,8 @@ public class Disc extends Media {
 	}
 	
 	public void display() {
+	}
+
+	public static void createNewItem() {
 	};
 }

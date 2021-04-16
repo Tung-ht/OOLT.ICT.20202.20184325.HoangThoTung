@@ -94,6 +94,98 @@ public class test {
 	public static void menu() {
 		while (true) {
 			System.out.println("********************************************");
+			System.out.println("**    	         Menu Application           ");
+			System.out.println();
+			System.out.println("*******************MENU*********************");
+			System.out.println("**	1. Administrator");
+			System.out.println("**	2. User");
+			System.out.println("**	0. Exit");
+			System.out.println("********************************************");
+			System.out.println("** 	Please choose a number: 0-1-2:");
+
+			String key = sc.nextLine();
+
+			switch (key) {
+			case "1":
+				System.out.println("--->Administrator:");
+				AdminMenu();
+				break;
+			case "2":
+				System.out.println("--->User:");
+				UserMenu();
+				break;
+			case "0":
+				System.out.println("--->You choose Exit:");
+				String c = "";
+				do {
+					System.out.println("Confirm exit: Y/N?");
+					c = sc.nextLine();
+					if (c.equalsIgnoreCase("y")) {
+						return; // exit from main function
+					} else if (c.equalsIgnoreCase("n")) {
+						break; // break do-while
+					} else {
+						System.out.println("! Input Error! Please re-enter!");
+					}
+				} while (!c.equalsIgnoreCase("y") && !c.equalsIgnoreCase("n")); // c!= y va c!=n
+				break; // break case 0
+			default:
+				System.out.println("There is no function like this!");
+				break;
+			}
+		}
+	}
+	public static void AdminMenu() {
+		while (true) {
+			System.out.println("********************************************");
+			System.out.println("**    	 Product Management Application     ");
+			System.out.println();
+			System.out.println("*******************MENU*********************");
+			System.out.println("**	1. Create new item");
+			System.out.println("**	2. Delete item by id");
+			System.out.println("**	3. Display the items list");
+			System.out.println("**	0. Exit");
+			System.out.println("********************************************");
+			System.out.println("** 	Please choose a number: 0-1-2-3:");
+
+			String key = sc.nextLine();
+
+			switch (key) {
+			case "1":
+				System.out.println("--->Creat a new item:");
+				System.out.println("Choose type of item: ");
+				break;
+			case "2":
+				System.out.println("--->Delete item by id");
+				break;
+			case "3":
+				System.out.println("--->Display items:");
+				break;
+			case "0":
+				System.out.println("--->You choose Exit:");
+				String c = "";
+				do {
+					System.out.println("Confirm exit: Y/N?");
+					c = sc.nextLine();
+					if (c.equalsIgnoreCase("y")) {
+						return; // exit
+					} else if (c.equalsIgnoreCase("n")) {
+						break; // break do-while
+					} else {
+						System.out.println("! Input Error! Please re-enter!");
+					}
+				} while (!c.equalsIgnoreCase("y") && !c.equalsIgnoreCase("n")); // c!= y va c!=n
+				break; // break case 0
+			default:
+				System.out.println("There is no function like this!");
+				break;
+			}
+		}
+	}
+	
+	public static void UserMenu() {
+		while (true) {
+			System.out.println("********************************************");
 			System.out.println("**    	 Order Management Application     	");
 			System.out.println();
 			System.out.println("*******************MENU*********************");
@@ -129,7 +221,7 @@ public class test {
 					System.out.println("Confirm exit: Y/N?");
 					c = sc.nextLine();
 					if (c.equalsIgnoreCase("y")) {
-						return; // exit from main function
+						return; // exit
 					} else if (c.equalsIgnoreCase("n")) {
 						break; // break do-while
 					} else {
