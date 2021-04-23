@@ -24,14 +24,19 @@
     <fullyQualifiedTypeName name="DigitalVideoDisc"/>
     <fullyQualifiedTypeName name="hust.soict.globalict.aims.utils.MyDate.MyDate"/>
     <fullyQualifiedTypeName name="hust.soict.globalict.aims.utils.DateUtils.DateUtils"/>
-    <fullyQualifiedTypeName name="hust.soict.globalict.aims.media.DigitalVideoDisc"/>
-    <fullyQualifiedTypeName name="hust.soict.globalict.aims.media.Book"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="hust.soict.globalict.aims.media.Media"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="hust.soict.globalict.aims.order.Order.Order"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="nghichchoi.BankAccount"/>
+    <fullyQualifiedTypeName name="nghichchoi.SaveAccount"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="javax.sound.midi.Track"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="hust.soict.globalict.aims.media.CompactDisc"/>
+    <fullyQualifiedTypeName name="hust.soict.globalict.aims.media.DigitalVideoDisc"/>
+    <fullyQualifiedTypeName name="hust.soict.globalict.aims.media.Media"/>
+    <fullyQualifiedTypeName name="hust.soict.globalict.aims.media.Book"/>
+    <fullyQualifiedTypeName name="hust.soict.globalict.aims.media.Track"/>
 </qualifiedTypeNameHistroy>
