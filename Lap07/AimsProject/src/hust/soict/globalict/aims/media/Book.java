@@ -3,7 +3,7 @@ package hust.soict.globalict.aims.media;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Book extends Media {
+public class Book extends Media implements AdminAction {
 	private ArrayList<String> authors = new ArrayList<String>();
 	
 //	constructor
@@ -50,16 +50,15 @@ public class Book extends Media {
 		System.out.println("|");	
 	}
 
-	public static void createNewItem() {
+	public void createNewItem() {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		Book book = new Book();
 		System.out.println("--->Import a new DVD: ");
-		System.out.println("-Title: "); book.title = sc.nextLine();
-		System.out.println("-Category: "); book.category = sc.nextLine();
-		System.out.println("-Cost: "); book.cost = sc.nextFloat();
+		System.out.println("-Title: "); this.title = sc.nextLine();
+		System.out.println("-Category: "); this.category = sc.nextLine();
+		System.out.println("-Cost: "); this.cost = sc.nextFloat(); sc.nextLine();
 		
-		Media.arrDB.add(book);
+		Media.arrDB.add(this);
 		System.out.println("Item is added successfully!");
 	}
 }

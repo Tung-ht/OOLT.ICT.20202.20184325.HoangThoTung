@@ -3,7 +3,7 @@ package hust.soict.globalict.aims.media;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class DigitalVideoDisc extends Disc implements Playable {
+public class DigitalVideoDisc extends Disc implements Playable, AdminAction {
 
 	public DigitalVideoDisc(String title, String category, String director, double length, float cost) {
 		super();
@@ -48,17 +48,16 @@ public class DigitalVideoDisc extends Disc implements Playable {
 		System.out.println("DVD length: " + this.length + " minutes");
 	}
 	
-	public static void createNewItem() {
+	public void createNewItem() {
 		Scanner sc = new Scanner(System.in);
-		DigitalVideoDisc dvd = new DigitalVideoDisc();
 		System.out.println("--->Import a new DVD: ");
-		System.out.println("-Title: "); dvd.title = sc.nextLine();
-		System.out.println("-Category: "); dvd.category = sc.nextLine();
-		System.out.println("-Director: "); dvd.director = sc.nextLine();
-		System.out.println("-Length: "); dvd.length = sc.nextDouble();
-		System.out.println("-Cost: "); dvd.cost = sc.nextFloat();
+		System.out.println("-Title: "); this.title = sc.nextLine();
+		System.out.println("-Category: "); this.category = sc.nextLine();
+		System.out.println("-Director: "); this.director = sc.nextLine();
+		System.out.println("-Length: "); this.length = sc.nextDouble(); sc.nextLine();
+		System.out.println("-Cost: "); this.cost = sc.nextFloat(); sc.nextLine();
 		
-		Media.arrDB.add(dvd);
+		Media.arrDB.add(this);
 		System.out.println("Item is added successfully!");
 	}
 }

@@ -3,7 +3,7 @@ package hust.soict.globalict.aims.media;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CompactDisc extends Disc implements Playable{
+public class CompactDisc extends Disc implements Playable, AdminAction{
 	private String artist;
 	private ArrayList<Track> tracks = new ArrayList<Track>();
 	
@@ -97,23 +97,22 @@ public class CompactDisc extends Disc implements Playable{
 		return;
 	}
 //	String title, String category, String director, float cost, String artist
-	public static void createNewItem() {
+	public void createNewItem() {
 		Scanner sc = new Scanner(System.in);
-		CompactDisc cd = new CompactDisc();
 		System.out.println("--->Import a new CD: ");
-		System.out.println("-Title: "); cd.title = sc.nextLine();
-		System.out.println("-Category: "); cd.category = sc.nextLine();
-		System.out.println("-Director: "); cd.director = sc.nextLine();
-		System.out.println("-Cost: "); cd.cost = sc.nextFloat();
-		System.out.println("-Artist: "); cd.setArtist(sc.nextLine());
+		System.out.println("-Title: "); this.title = sc.nextLine();
+		System.out.println("-Category: "); this.category = sc.nextLine();
+		System.out.println("-Director: "); this.director = sc.nextLine();
+		System.out.println("-Cost: "); this.cost = sc.nextFloat(); sc.nextLine();
+		System.out.println("-Artist: "); this.setArtist(sc.nextLine());
 		System.out.println("-Add tracks: ");
 		
 		Track tmp = new Track();
 		System.out.println("--->Track name: "); tmp.setTrackName(sc.nextLine());
-		System.out.println("--->Track length: "); tmp.setTrackLength(sc.nextDouble());
-		cd.addTrack(tmp.getTrackName(), tmp.getTrackLength());
+		System.out.println("--->Track length: "); tmp.setTrackLength(sc.nextDouble()); sc.nextLine();
+		this.addTrack(tmp.getTrackName(), tmp.getTrackLength());
 		
-		Media.arrDB.add(cd);
+		Media.arrDB.add(this);
 		System.out.println("Item is added successfully!");
 	};
 }

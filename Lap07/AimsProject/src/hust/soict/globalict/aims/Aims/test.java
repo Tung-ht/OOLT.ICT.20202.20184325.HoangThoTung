@@ -15,84 +15,10 @@ public class test {
 	static Scanner sc = new Scanner(System.in);
 	static Order odr;
 
-//	Function 2:
-	public static void addItem() {
-		if(odr == null) {
-			System.out.println("Your order is invalid!");
-			return;
-		}
-		System.out.println("--->Add item:");
-		if(Order.getNbOrders() == 0) {
-			System.out.println("You have not created any order!");
-		}
-		else {
-			System.out.println("-----List of media items-----");
-			for (int i = 0; i < Media.arrDB.size(); i++) {
-				System.out.printf("%-3d", i + 1);
-				Media.arrDB.get(i).display();
-			}
-			while (true) {
-				System.out.println("Choose a items to add by number id: ");
-				String s = sc.nextLine();
-				int tmp = 0;
-				try {
-					tmp = Integer.parseInt(s);
-					odr.addMedia(Media.arrDB.get(tmp-1));
-					break;
-				} catch (Exception e) {
-					System.out.println("Input Error!");
-				}
-			}
-		}
-		return;
-	}
-
-//	Function 3:
-	public static void deleteItem() {
-		if(odr == null) {
-			System.out.println("Your order is invalid!");
-			return;
-		}
-		System.out.println("--->Delete item:");
-		if(Order.getNbOrders() == 0) {
-			System.out.println("You have not created any order!");
-		}
-		else {
-			while (true) {
-				System.out.println("Choose a items to delete by number id: ");
-				String s = sc.nextLine();
-				int tmp = 0;
-				try {
-					tmp = Integer.parseInt(s);
-					odr.removeMedia(tmp-1);
-					break;
-				} catch (Exception e) {
-					System.out.println("Input Error!");
-				}
-			}
-		}
-		return;
-	}
-
-//	Function 4:
-	public static void displayListItems() {
-		if(odr == null) {
-			System.out.println("Your order is invalid!");
-			return;
-		}
-		System.out.println("--->Display the order:");
-		if(Order.getNbOrders() == 0) {
-			System.out.println("You have not created any order!");
-		}
-		else {
-			odr.printOrder();
-		}
-		return;
-	}
-
 //	Menu 
 	public static void menu() {
 		while (true) {
+			System.out.println("\n\n");
 			System.out.println("********************************************");
 			System.out.println("**    	         Menu Application           ");
 			System.out.println();
@@ -135,15 +61,16 @@ public class test {
 			}
 		}
 	}
-	public static void AdminMenu() {
+
+//	
+	// function 1 AdminMenu:
+	public static void createNew() {
 		while (true) {
-			System.out.println("********************************************");
-			System.out.println("**    	 Product Management Application     ");
-			System.out.println();
-			System.out.println("*******************MENU*********************");
-			System.out.println("**	1. Create new item");
-			System.out.println("**	2. Delete item by id");
-			System.out.println("**	3. Display the items list");
+			System.out.println("");
+			System.out.println("Choose type of item: ");
+			System.out.println("**	1. Digital Video Disc");
+			System.out.println("**	2. Compact Disc");
+			System.out.println("**	3. Book");
 			System.out.println("**	0. Exit");
 			System.out.println("********************************************");
 			System.out.println("** 	Please choose a number: 0-1-2-3:");
@@ -152,14 +79,19 @@ public class test {
 
 			switch (key) {
 			case "1":
-				System.out.println("--->Creat a new item:");
-				System.out.println("Choose type of item: ");
+				System.out.println("--->DVD: ");
+				DigitalVideoDisc dvd = new DigitalVideoDisc();
+				dvd.createNewItem();
 				break;
 			case "2":
-				System.out.println("--->Delete item by id");
+				System.out.println("--->CD: ");
+				CompactDisc cd = new CompactDisc();
+				cd.createNewItem();
 				break;
 			case "3":
-				System.out.println("--->Display items:");
+				System.out.println("--->Book: ");
+				Book book = new Book();
+				book.createNewItem();
 				break;
 			case "0":
 				System.out.println("--->You choose Exit:");
@@ -182,9 +114,76 @@ public class test {
 			}
 		}
 	}
-	
+
+	public static void AdminMenu() {
+		while (true) {
+			System.out.println("\n\n");
+			System.out.println("********************************************");
+			System.out.println("**    	 Product Management Application     ");
+			System.out.println();
+			System.out.println("*******************MENU*********************");
+			System.out.println("**	1. Create new item");
+			System.out.println("**	2. Delete item by id");
+			System.out.println("**	3. Display the items list");
+			System.out.println("**	0. Exit");
+			System.out.println("********************************************");
+			System.out.println("** 	Please choose a number: 0-1-2-3:");
+
+			String key = sc.nextLine();
+
+			switch (key) {
+			case "1":
+				System.out.println("--->Creat a new item:");
+				createNew();
+				break;
+
+			case "2":
+				System.out.println("--->Delete item by id");
+				System.out.println("Enter item id: ");
+				try {
+					int id = Integer.parseInt(sc.nextLine());
+					if(id >= 1 && id <= Media.arrDB.size()) {
+						Media.deleteItem(id);
+					}
+					else {
+						System.out.println("Invalid input id!!!");
+					}
+				} catch (Exception e) {
+					System.out.println("Invalid input id!!!");
+				}
+				break;
+			case "3":
+				System.out.println("--->Display items:");
+				for (int i = 0; i < Media.arrDB.size(); i++) {
+					System.out.printf("%-3d", i + 1);
+					Media.arrDB.get(i).display();
+				}
+				break;
+			case "0":
+				System.out.println("--->You choose Exit:");
+				String c = "";
+				do {
+					System.out.println("Confirm exit: Y/N?");
+					c = sc.nextLine();
+					if (c.equalsIgnoreCase("y")) {
+						return; // exit
+					} else if (c.equalsIgnoreCase("n")) {
+						break; // break do-while
+					} else {
+						System.out.println("! Input Error! Please re-enter!");
+					}
+				} while (!c.equalsIgnoreCase("y") && !c.equalsIgnoreCase("n")); // c!= y va c!=n
+				break; // break case 0
+			default:
+				System.out.println("There is no function like this!");
+				break;
+			}
+		}
+	}
+
 	public static void UserMenu() {
 		while (true) {
+			System.out.println("\n\n");
 			System.out.println("********************************************");
 			System.out.println("**    	 Order Management Application     	");
 			System.out.println();
@@ -203,7 +202,8 @@ public class test {
 			case "1":
 				System.out.println("--->Creat a new order:");
 				odr = Order.newOrder();
-				if(odr == null) break;
+				if (odr == null)
+					break;
 				break;
 			case "2":
 				addItem();
@@ -236,7 +236,78 @@ public class test {
 		}
 	}
 
-	
+//	Function 2 of UserMenu:
+	public static void addItem() {
+		if (odr == null) {
+			System.out.println("Your order is invalid!");
+			return;
+		}
+		System.out.println("--->Add item:");
+		if (Order.getNbOrders() == 0) {
+			System.out.println("You have not created any order!");
+		} else {
+			System.out.println("-----List of media items-----");
+			for (int i = 0; i < Media.arrDB.size(); i++) {
+				System.out.printf("%-3d", i + 1);
+				Media.arrDB.get(i).display();
+			}
+			while (true) {
+				System.out.println("Choose a items to add by number id: ");
+				String s = sc.nextLine();
+				int tmp = 0;
+				try {
+					tmp = Integer.parseInt(s);
+					odr.addMedia(Media.arrDB.get(tmp - 1));
+					break;
+				} catch (Exception e) {
+					System.out.println("Input Error!");
+				}
+			}
+		}
+		return;
+	}
+
+//	Function 3 of UserMenu:
+	public static void deleteItem() {
+		if (odr == null) {
+			System.out.println("Your order is invalid!");
+			return;
+		}
+		System.out.println("--->Delete item:");
+		if (Order.getNbOrders() == 0) {
+			System.out.println("You have not created any order!");
+		} else {
+			while (true) {
+				System.out.println("Choose a items to delete by number id: ");
+				String s = sc.nextLine();
+				int tmp = 0;
+				try {
+					tmp = Integer.parseInt(s);
+					odr.removeMedia(tmp - 1);
+					break;
+				} catch (Exception e) {
+					System.out.println("Input Error!");
+				}
+			}
+		}
+		return;
+	}
+
+//	Function 4 of UserMenu:
+	public static void displayListItems() {
+		if (odr == null) {
+			System.out.println("Your order is invalid!");
+			return;
+		}
+		System.out.println("--->Display the order:");
+		if (Order.getNbOrders() == 0) {
+			System.out.println("You have not created any order!");
+		} else {
+			odr.printOrder();
+		}
+		return;
+	}
+
 //----------------------------------------Main program----------------------------------------------------//
 	public static void main(String[] args) {
 //		Initialize data: auto be added to the arrDB
@@ -274,7 +345,7 @@ public class test {
 		new DigitalVideoDisc("League of Legends", "Game", "Riot", 80, 10.5f);
 		new DigitalVideoDisc("Thoi su", "Politics", "VTV", 80, 20.25f);
 		new DigitalVideoDisc("The thao 24h", "News", "VTV", 80, 31.25f);
-		
+
 //		some CDs:
 		CompactDisc cd1 = new CompactDisc("Album 1", "R&B", "Osad", 99, "Ju JingYi");
 		cd1.addTrack("Don't touch", 453);
