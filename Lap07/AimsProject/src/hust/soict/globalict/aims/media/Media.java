@@ -25,6 +25,9 @@ public abstract class Media {
 
 // 	method
 	public abstract void display();
-	public static void createNewItem() {
-	};
+	//id = 1,2,3,4,...last
+	public static void deleteItem(int id) {
+		arrDB.remove(id-1);
+		System.out.println("Remove item successfully!");
+	}
 }
